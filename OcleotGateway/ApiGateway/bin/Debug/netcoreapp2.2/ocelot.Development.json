@@ -1,0 +1,253 @@
+{
+  "ReRoutes": [
+    {
+      "DownstreamPathTemplate": "/api/Foods",
+      "UpstreamPathTemplate": "/service1",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "AddHeadersToRequest": {},
+      "UpstreamHeaderTransform": {},
+      "DownstreamHeaderTransform": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "RequestIdKey": null,
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": null
+      },
+      "ReRouteIsCaseSensitive": false,
+      "ServiceName": null,
+      "DownstreamScheme": "http",
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 0,
+        "DurationOfBreak": 0,
+        "TimeoutValue": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": null,
+        "Key": null,
+        "Expiry": 0
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": null,
+        "PeriodTimespan": 0.0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseTracing": false,
+        "UseProxy": true
+      },
+      "UseServiceDiscovery": false,
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59117
+        }
+      ],
+      "UpstreamHost": null,
+      "Key": "ser1",
+      "DelegatingHandlers": [],
+      "Priority": 1,
+      "Timeout": 0,
+      "DangerousAcceptAnyServerCertificateValidator": false
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cars",
+      "UpstreamPathTemplate": "/service2",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "AddHeadersToRequest": {},
+      "UpstreamHeaderTransform": {},
+      "DownstreamHeaderTransform": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "RequestIdKey": null,
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": null
+      },
+      "ReRouteIsCaseSensitive": false,
+      "ServiceName": null,
+      "DownstreamScheme": "http",
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 0,
+        "DurationOfBreak": 0,
+        "TimeoutValue": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": null,
+        "Key": null,
+        "Expiry": 0
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": null,
+        "PeriodTimespan": 0.0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseTracing": false,
+        "UseProxy": true
+      },
+      "UseServiceDiscovery": false,
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59378
+        }
+      ],
+      "UpstreamHost": null,
+      "Key": "ser2",
+      "DelegatingHandlers": [],
+      "Priority": 1,
+      "Timeout": 0,
+      "DangerousAcceptAnyServerCertificateValidator": false
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cars/1",
+      "UpstreamPathTemplate": "/sd",
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "AddHeadersToRequest": {},
+      "UpstreamHeaderTransform": {},
+      "DownstreamHeaderTransform": {},
+      "AddClaimsToRequest": {},
+      "RouteClaimsRequirement": {},
+      "AddQueriesToRequest": {},
+      "RequestIdKey": null,
+      "FileCacheOptions": {
+        "TtlSeconds": 0,
+        "Region": null
+      },
+      "ReRouteIsCaseSensitive": false,
+      "ServiceName": null,
+      "DownstreamScheme": "http",
+      "QoSOptions": {
+        "ExceptionsAllowedBeforeBreaking": 0,
+        "DurationOfBreak": 0,
+        "TimeoutValue": 0
+      },
+      "LoadBalancerOptions": {
+        "Type": null,
+        "Key": null,
+        "Expiry": 0
+      },
+      "RateLimitOptions": {
+        "ClientWhitelist": [],
+        "EnableRateLimiting": false,
+        "Period": null,
+        "PeriodTimespan": 0.0,
+        "Limit": 0
+      },
+      "AuthenticationOptions": {
+        "AuthenticationProviderKey": null,
+        "AllowedScopes": []
+      },
+      "HttpHandlerOptions": {
+        "AllowAutoRedirect": false,
+        "UseCookieContainer": false,
+        "UseTracing": false,
+        "UseProxy": true
+      },
+      "UseServiceDiscovery": false,
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59378
+        }
+      ],
+      "UpstreamHost": null,
+      "Key": "k1",
+      "DelegatingHandlers": [],
+      "Priority": 1,
+      "Timeout": 0,
+      "DangerousAcceptAnyServerCertificateValidator": false
+    }
+  ],
+  "Aggregates": [
+    {
+      "ReRouteKeys": [
+        "ser1",
+        "ser2"
+      ],
+      "UpstreamPathTemplate": "/",
+      "UpstreamHost": null,
+      "ReRouteIsCaseSensitive": false,
+      "Aggregator": null,
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "Priority": 1
+    },
+    {
+      "ReRouteKeys": [
+        "ser2",
+        "k1"
+      ],
+      "UpstreamPathTemplate": "/all",
+      "UpstreamHost": null,
+      "ReRouteIsCaseSensitive": false,
+      "Aggregator": null,
+      "UpstreamHttpMethod": [
+        "Get"
+      ],
+      "Priority": 1
+    }
+  ],
+  "GlobalConfiguration": {
+    "RequestIdKey": null,
+    "ServiceDiscoveryProvider": {
+      "Host": null,
+      "Port": 0,
+      "Type": null,
+      "Token": null,
+      "ConfigurationKey": null,
+      "PollingInterval": 0
+    },
+    "RateLimitOptions": {
+      "ClientIdHeader": "ClientId",
+      "QuotaExceededMessage": null,
+      "RateLimitCounterPrefix": "ocelot",
+      "DisableRateLimitHeaders": false,
+      "HttpStatusCode": 429
+    },
+    "QoSOptions": {
+      "ExceptionsAllowedBeforeBreaking": 0,
+      "DurationOfBreak": 0,
+      "TimeoutValue": 0
+    },
+    "BaseUrl": null,
+    "LoadBalancerOptions": {
+      "Type": null,
+      "Key": null,
+      "Expiry": 0
+    },
+    "DownstreamScheme": null,
+    "HttpHandlerOptions": {
+      "AllowAutoRedirect": false,
+      "UseCookieContainer": false,
+      "UseTracing": false,
+      "UseProxy": true
+    }
+  }
+}

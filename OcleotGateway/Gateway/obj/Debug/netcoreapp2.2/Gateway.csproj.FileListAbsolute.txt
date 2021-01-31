@@ -1,0 +1,4 @@
+C:\Users\mokhtar.hashem\source\repos\OcleotGateway\Gateway\obj\Debug\netcoreapp2.2\Gateway.csprojAssemblyReference.cache
+C:\Users\mokhtar.hashem\source\repos\OcleotGateway\Gateway\obj\Debug\netcoreapp2.2\Gateway.AssemblyInfoInputs.cache
+C:\Users\mokhtar.hashem\source\repos\OcleotGateway\Gateway\obj\Debug\netcoreapp2.2\Gateway.AssemblyInfo.cs
+C:\Users\mokhtar.hashem\source\repos\OcleotGateway\Gateway\obj\Debug\netcoreapp2.2\Gateway.csproj.CoreCompileInputs.cache

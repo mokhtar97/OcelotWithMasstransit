@@ -1,0 +1,65 @@
+{
+  "Reroutes": [
+    {
+      "DownstreamPathTemplate": "/api/Foods",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59117
+        }
+      ],
+      "Key": "ser1",
+      "UpstreamPathTemplate": "/service1",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cars",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59378
+        }
+      ],
+      "Key": "ser2",
+      "UpstreamPathTemplate": "/service2",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+    ,
+    {
+      "DownstreamPathTemplate": "/api/Cars/1",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 59378
+        }
+      ],
+      "Key": "k1",
+      "UpstreamPathTemplate": "/sd",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+
+  "Aggregates": [
+    {
+      "ReRouteKeys": [
+        "ser1",
+        "ser2"
+      ],
+      "UpstreamPathTemplate": "/",
+
+    },
+    {
+      "ReRouteKeys": [
+        "ser2",
+        "k1"
+  
+      ],
+      "UpstreamPathTemplate": "/all"
+
+    }
+  ]
+}
+

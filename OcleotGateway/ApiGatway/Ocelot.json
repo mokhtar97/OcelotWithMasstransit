@@ -1,0 +1,38 @@
+{
+
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/api/Foods",
+      "DownstreamHostandPorts": [
+        //  <-------------Local Host details ------------>
+        {
+          "Host": "localhost",
+          "Port": "59117"
+        }    
+        //{
+        //  "Host": "appservice1.azurewebsites.net"
+        //}
+
+      ],
+      "UpstreamPathTemplate": "/service1",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/Cars",
+      "DownstreamHostandPorts": [
+        //<-------------Local Host details ------------>
+        {
+          "Host": "localhost",
+          "Port": "59378"
+        }   
+        //{
+        //  "Host": "appservice2.azurewebsites.net"
+        //}
+      ],
+      "UpstreamPathTemplate": "/service2",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+
+  ]
+
+}
